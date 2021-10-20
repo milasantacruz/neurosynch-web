@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='pragma' content='no-cache'> 
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Philosopher:700|Poppins:500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/bulma-steps/dist/css/bulma-steps.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Neurosynch</title>
+</head>
+<body>
+    
+    <div class="load">
+        <div class="load_icon">
+            <img src="img/loader.png" alt=""/>
+        </div>
+               
+    </div>
+
+    <div class="sketch"  id="sketch-holder"></div>
+
+    <nav class="navbar  is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <a href="#home_container" id="active_home">Home</a>
+                </div>
+                <div class="navbar-item">
+                    <a href="#holistics_container" id="active_hol">About</a>
+                </div>
+                <div class="navbar-item">
+                    <a href="#how_container" id="active_how">Contact</a>
+                </div>
+    
+                <div class="navbar-item">
+                    
+                    <div class="buttons">
+                        
+    
+                        <button class="button is-primary" id="sign_up" ><strong>Sign Up</strong></button>
+                        <button class="button  is-primary" id="log_in" >Login</button>
+                        
+    
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+        
+    </nav>
+
+    
+        <!-- LOGO -->
+        <div class="logo">
+            <img class="tx_home" src="img/neuro.svg" alt="">
+            <img class="tx_how" src="img/how.svg" alt="">
+            <img class="tx_learn" src="img/learn.svg" alt="">
+        </div>
+
+            
+            <!-- SOCIAL -->
+            <div class="redes">
+                    <div class="social_m"><i class=" fab fa-facebook"></i></div>
+                    <div class="social_m"><i class=" fab fa-instagram"></i></div>
+                    <div class="social_m"><i class=" fab fa-youtube"></i></div>
+                    <div class="user_component" id="user_component">
+                        <button class="button is-primary ">
+                           
+                                <span class="media_name"></span>                                
+                   
+                        </button>
+                        
+                    </div>
+            </div>
+
+
+            <!-- USER_MODAL -->
+
+
+            <div class="modal m_user">
+                <div class="modal-background">    </div>
+                <div class="modal-content box">
+                    
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img class="media_pic" alt="Placeholder image">
+                            </figure>
+                        </div>
+                       
+                    </div>
+                    <div class="user_content">
+                        <div class="media">
+                            <div class="media-right">
+                                <figure class="image is48x48">
+                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="media-left">
+                                <span class="media_name"></span>
+                                <p  class="is-6 media_email"></p>
+                                <button class="button is-primary" id="log_out">LogOut</button>
+    
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+        <!-- LOGIN -->
+
+                <div class="modal m_logIn">
+                    <div class="modal-background">    </div>
+                    <div class="modal-content box">
+                        <div class="logIn_success notification is-primary"></div>
+                        <form  class="logIn" id="logIn">
+
+                            <div class="field">
+                                    <label for="" class="label">E-mail:</label>
+                                    <div class="control has-icons-left">
+                                        <input type="text" placeholder="example@example.com" class="input login_email">
+                                        <span class="icon is-left " ><i class="fas fa-envelope-square"></i></span>
+                                    </div>
+                            </div>
+                
+                            <div class="field">
+                                    <label for="" class="label">Password:</label>
+                                
+                                <div class="control has-icons-left">
+                                    <input type="password" class="input login_password">
+                                    <span class="icon is-left"><i class="fas fa-lock"></i></span>
+                                </div>
+                            </div>
+                
+                            <div class="field">
+                                <div class="control">
+                                    <button type="submit" class="button b_li is-primary">Login</button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <button class="modal-close is-large" aria-label="close"></button>
+                </div>
+
+                <!-- SIGNuP -->
+
+                <div class="modal m_sup">
+                    <div class="modal-background">    </div>
+                    <div class="modal-content box">
+                        <div class="emailConfirm notification is-primary">
+                        </div>
+
+                        <form  class="signup" id="signup">
+
+                            <div class="field">
+                                <label class="label">Name:</label>
+                                <div class="control has-icons-left">
+                                    <input type="text" class="input signUp_name" placeholder="Your name!">
+                                    <span class="icon is-left"><i class="fas fa-user"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">E-mail:</label>
+                                <div class="control has-icons-left">
+                                    <input type="email" class="input signUp_email">
+                                    <span class="icon is-left"><i class="fas fa-envelope-square"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Password:</label>
+                                <div class="control has-icons-left">
+                                    <input type="password" class="input signUp_password">
+                                    <span class="icon is-left"><i class="fas fa-lock"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button b_sup is-primary">Sign Up</button>
+                                </div>
+                            </div>
+
+                        </form>
+                
+                    </div>
+                    <button class="modal-close is-large" aria-label="close"></button>
+                </div>
+  
+            <div class="main_container" id="main_cont"> 
+
+                
+                
+                <section class="columns home_container" id="home_container">
+                        
+             <!-- HOME     -->
+
+                        <div class="column home_info">
+                                <div class="">
+                                    <div class=" p_container">
+                                        <h1 class="home_title ">A NEW APPROACH</h1>
+                                        <p class="p_items" >To treat physical and mental health.  </p>
+                                        <p class="p_items p_link " > <a href="">We are specialized in brain health and training...</a></p>
+    
+                                    </div>
+    
+                                    <div class=" field has-addons  info_component">
+                                        
+                                        <div class="control is-expanded has-icons-left">
+                                            <input id="in_stay" type="text" placeholder="Enter your e-mail!" class="input  input_stay has-background-dark">
+                                            <span class="icon is-left " ><i class="fas fa-envelope-square"></i></span>
+            
+                                            
+                                        </div>
+                                        <div class="label">
+                                            <button type="submit" class="button send_email is-primary">Stay Informed!</button>
+            
+                                        </div>
+            
+                                        </div>
+                                        <div class="notification thanks is-primary">
+                                                <p>Thanks for Subscribe!</p>
+                                        </div>
+                                </div>
+
+                        </div>
+
+                        <div class="column home_brain">
+                            
+
+                        </div>
+                </section>
+            
+            
+                <section class=" holistics_container" id="holistics_container">
+
+                        <div class="columns">
+                              
+                                        <div class="column hexa_svg">
+                                            <!-- SVG__HEX -->
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 1104 1080" style="enable-background:new 0 0 1104 1080;" xml:space="preserve">
+                                    <style type="text/css">
+                                        .mt0{fill:#9E53C9;}
+                                        .mt1{fill:#B281CB;}
+                                        .mt2{fill:#64C9BB;}
+
+                                        .st0{fill:#FFFFFF;}
+                                        .st1{fill:#202020;}
+                                        .st2{fill:none;}
+                                        .st3{font-family:'Poppins-LightItalic';}
+                                        .st4{font-size:30.641px;}
+                                        .st5{font-size:30px;}
+                                    </style>
+                                    
+
+                                    <!-- CUBE_SVG -->
+
+                                    <g id="cube3" class="hexa" >
+                                        <g>
+                                            
+                                                <image style="overflow:visible;opacity:0.5;" width="167" height="191" xlink:href="1F4B49B3.png"  transform="matrix(1 0 0 1 594 725)">
+                                            </image>
+                                            <g>
+                                                <polygon class="mt0" points="616.1,768.4 616.1,853.2 687.4,893.9 687.4,812.5 			"/>
+                                                <polygon class="mt1" points="687.4,812.5 687.4,893.9 758.6,853.2 758.6,768.4 			"/>
+                                                <polygon class="mt2" points="758.6,768.4 687.4,727.7 616.1,768.4 687.4,812.5 			"/>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g id="cube4" class="hexa" >
+                                        <g>
+                                            
+                                                <image style="overflow:visible;opacity:0.5;" width="167" height="191" xlink:href="1F4B49B1.png"  transform="matrix(1 0 0 1 290 725)">
+                                            </image>
+                                            <g>
+                                                <polygon class="mt0" points="383.4,893.9 383.4,812.5 312.1,768.4 312.1,853.2 			"/>
+                                                <polygon class="mt1" points="383.4,893.9 454.6,853.2 454.6,768.4 383.4,812.5 			"/>
+                                                <polygon class="mt2" points="383.4,727.7 312.1,768.4 383.4,812.5 454.6,768.4 			"/>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    
+                                    <g id="cube2" class="hexa" >
+                                        <g>
+                                            
+                                                <image style="overflow:visible;opacity:0.5;" width="167" height="191" xlink:href="1F4B49B0.png"  transform="matrix(1 0 0 1 747 454)">
+                                            </image>
+                                            <g>
+                                                <polygon class="mt0" points="840.4,622.9 840.4,541.5 769.1,497.4 769.1,582.2 			"/>
+                                                <polygon class="mt1" points="840.4,622.9 911.6,582.2 911.6,497.4 840.4,541.5 			"/>
+                                                <polygon class="mt2" points="840.4,456.7 769.1,497.4 840.4,541.5 911.6,497.4 			"/>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g id="cube5" class="hexa" >
+                                        <g>
+                                            
+                                                <image style="overflow:visible;opacity:0.5;" width="167" height="191" xlink:href="1F4B49BE.png"  transform="matrix(1 0 0 1 137 454)">
+                                            </image>
+                                            <g>
+                                                <polygon class="mt0" points="230.4,622.9 230.4,541.5 159.1,497.4 159.1,582.2 			"/>
+                                                <polygon class="mt1" points="230.4,622.9 301.6,582.2 301.6,497.4 230.4,541.5 			"/>
+                                                <polygon class="mt2" points="230.4,456.7 159.1,497.4 230.4,541.5 301.6,497.4 			"/>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g id="cube6" class="hexa" >
+                                        <g>
+                                            
+                                                <image style="overflow:visible;opacity:0.5;" width="167" height="191" xlink:href="1F4B49BF.png"  transform="matrix(1 0 0 1 289 183)">
+                                            </image>
+                                            <g>
+                                                <polygon class="mt0" points="382.4,351.9 382.4,270.5 311.1,226.4 311.1,311.2 			"/>
+                                                <polygon class="mt1" points="382.4,351.9 453.6,311.2 453.6,226.4 382.4,270.5 			"/>
+                                                <polygon class="mt2" points="382.4,185.7 311.1,226.4 382.4,270.5 453.6,226.4 			"/>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g id="cube7" class="hexa" >
+                                        <g>
+                                            
+                                                <image style="overflow:visible;opacity:0.5;" width="167" height="191" xlink:href="1F4B49B2.png"  transform="matrix(1 0 0 1 594 183)">
+                                            </image>
+                                            <g>
+                                                <polygon class="mt0" points="687.4,351.9 687.4,270.5 616.1,226.4 616.1,311.2 			"/>
+                                                <polygon class="mt1" points="687.4,351.9 758.6,311.2 758.6,226.4 687.4,270.5 			"/>
+                                                <polygon class="mt2" points="687.4,185.7 616.1,226.4 687.4,270.5 758.6,226.4 			"/>
+                                            </g>
+                                        </g>
+                                    </g>
+
+                                    <!-- TX_SVG    -->
+                                    <g id="cube1" class="hexa" >
+                                        <g>
+                                            
+                                                <image style="overflow:visible;opacity:0.5;" width="310" height="358" xlink:href="1F4B49B7.png"  transform="matrix(1 0 0 1 370 371)">
+                                            </image>
+                                            <g>
+                                                <polygon class="mt0" points="535.4,706.1 535.4,543.2 392.9,455 392.9,624.6 			"/>
+                                                <polygon class="mt1" points="535.4,706.1 677.9,624.6 677.9,455 535.4,543.2 			"/>
+                                                <polygon class="mt2" points="535.4,373.6 392.9,455 535.4,543.2 677.9,455 			"/>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    
+                                            </svg>
+                                        </div>           
+                            
+                                <div class="column"></div>
+
+                        </div>
+                                
+                </section>
+
+                
+                <section class="how_container" id="how_container">
+                   <div class="hg" >
+
+                    <div class="columns how_items">
+                        <div class="card column c4 how_item " id="active_app">
+                           
+                            <div class="card-content">
+                                <h1 class="title">Our approach!</h1>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="card column c5 how_item science" id="science">
+                            
+                            <div class="card-content">
+                                <h1 class="title">Science for everyone!</h1>
+                                
+                            </div>
+                        </div>
+                       
+                    </div>
+                    
+
+                    <div class="columns how_items">
+                        <div class="card column c1 how_item" id="about">
+                            
+                            <div class="card-content">
+                                <h1 class="title">About Us</h1>
+                                
+                            </div>
+                        </div>
+
+                       
+
+
+                        <div class="card column c2 how_item" id="help">
+                           
+                            <div class="card-content">
+                                <h1 class="title">Who we help?</h1>
+                                
+                            </div>
+                        </div>
+
+                        
+
+
+                        <div class="card column c3 how_item" id="lab">
+                           
+                            <div class="card-content">
+                                <h1 class="title">Media Lab</h1>
+                                
+                            </div>
+                        </div>
+                    
+                    
+                    </div>
+
+                     <!-- MODALES -->
+                     <div class="modal 0 ">
+                        <div class="modal-background"></div>
+                        <div class="modal-card app_content">
+                            <header class="modal-card-head has-background-primary">
+                                <button class="level-item button app_butt is-warning is-active">Our Approach</button>
+                                        <button class="level-item button app_butt is-primary is-active">Holistic</button>
+                                        <button class="level-item button app_butt is-danger is-active">Evidence-based</button>
+                                        <button class="level-item button app_butt is-warning is-active">Without side effects</button>
+                                        <button class="level-item button app_butt is-primary is-active">Customized</button>
+                                        <button class="level-item button app_butt is-danger is-active">Community and online support</button>
+                                        <button class="level-item button app_butt is-warning is-active">Supportive Materials</button>
+                                        <button class="level-item button app_butt is-primary is-active">Data collection</button>
+                            </header>
+                            <section class="modal-card-body approach_body our is_on">
+                                <div class="main_apps columns is-vcentered">
+                                    <div class="column">
+                                        <h1 class="title">“If we could give <span class="letters" style="color: #9E53C9;" >every individual</span> the right amount of <span class="letters" style="color: #edb449;">nourishment</span> and <span class="letters" style="color: #00ba9d;">exercise</span>, we would have found the safest way to health”</h1>
+                                        <h1 class="letters" style="text-align: right;">- Hippocrates</h1>
+                                        <br>
+                                        <h1 >Our approach is specifically designed to strengthen and <span class="letters" style="color: #9E53C9;"> build brain connectivity</span> with a unique combination of <span class="letters" style="color: rgb(255, 0, 179);" >physical</span>, <span class="letters" style="color: #64C9BB;" >sensory</span>, <span class="letters" style="color: rgb(255, 166, 0);" >motor</span>, and <span style="color: #2cdd1c;" >cognitive</span> activities.</h1>
+                                        
+                                    </div>
+                                    <div class="column cycle_container">
+                                        <img class="c_img" src="img/w_cycle.svg" alt="">
+                                        <img class="c_img" src="img/up_cycle.svg" alt="">
+
+                                    </div>
+                                </div>
+                                
+                            </section>
+                            <section class="modal-card-body approach_body holistic has-text-centered">
+                                <div class="columns is-vcentered">
+                                    <div class="column ">
+                                        <h1>holistic refers to the whole person – <span class="letters" style="color: #9E53C9;">body</span>, <span class="letters" style="color: #64C9BB;">mind</span>, and <span class="letters" style="color: rgb(255, 166, 0);">spirit</span>. From a holistic perspective, the whole person is seen as being part of a larger whole and is connected to many sources of wellness. Psychological and physical health depends on the balance of all components. 
+                                        </h1>
+                                       
+                                    </div>
+                                    <div class="column">
+                                        <img src="img/holistic.png" alt="">
+                                    </div>
+                                </div>
+                                
+                            </section>
+                            <section class="modal-card-body approach_body evidence">
+                                <h1 class="title">An <span style="color:#9E53C9 ;"> evidence-based practice</span> is a practice that has been rigorously evaluated in experimental evaluations and shown to make a positive, statistically <span class="letters" style="color:rgb(255, 166, 0) ;" >significant difference</span> in important outcomes. 
+                                    All our methods are supported by scientific data. </h1>
+                                
+                            </section>
+                            <section class="modal-card-body approach_body effects">
+                                
+                            </section>
+                            <section class="modal-card-body approach_body customized">
+                                <div class="columns">
+                                    <div class="column">
+                                        <h1 class="title">After a <span class="letters" style="color: rgb(255, 166, 0);" >deep</span> <span class="letters" style="color: #64C9BB;" >complete</span> <span class="letters" style="color: #2cdd1c;" >assessment</span>, </h1>                                
+                                        <h1 class="subtitle">our team will design a personalized program based on specific needs and goals for each of our clients. <span class="letters" style="color: rgb(255, 166, 0);" >(</span>this will allow long-term positive results, engaging, and motivation<span class="letters" style="color: rgb(255, 166, 0);" >)</span></h1>
+                                        <button class="button is-primary">Customized cognitive and physical exercises</button>
+                                    </div>
+                                    <div class="column"></div>
+                                </div>
+                            </section>
+                            <section class="modal-card-body approach_body community">
+                                
+                                
+                            </section>
+                            <section class="modal-card-body approach_body supportive">
+                                
+                                
+                            </section>
+                            <section class="modal-card-body approach_body collection">
+                                <h1 class="title"> We assets before, and during all the program timeline </h1>
+                                
+                            </section>
+                            <footer class="modal-card-foot has-background-primary ">
+                                <button class="button is-dark">Download</button>
+                                <button class="button is-dark">Watch</button>
+                            
+    
+                            </footer>
+    
+                        </div>
+                        <button class="modal-close is-large" aria-label="close"></button>
+
+                      </div>
+
+                  <div class="modal 2 ">
+                    <div class="modal-background"></div>
+                    <div class="modal-card">
+                        <header class="modal-card-head has-background-primary">
+                            <h1  class="modal-card-title">Who we are?</h1    >
+                        </header>
+                        <section class="modal-card-body">
+                            <p>NeuroSynch Health is a center that offers a holistic approach to treat physical and mental health.  Our team of professionals will use the best methods of science, arts, and technology combined to create a unique personalized approach for our clients.  We are specialized in brain health and training.  
+                                We propose a non-invasive therapy that analyzes and observes the health of people as an integrated whole, mind body and environment.
+                            </p>
+                            <h1 class="title">Why is it important to have a deeper understanding of how the brain functions?</h1>
+                            <p>Our brain’s health dictates many fundamental aspects of our life, its what make us us. 
+                                We are not hardwired to be a certain way for the rest of our lives, and we are no victim of our genes.  In fact, our brains have the capacity to change and improve and understanding how the brain works and what damages the brains help us to take control of our health. 
+                                By knowing how our brains work, we can learn techniques and implement habits in order to live to our full potential. Age declining is related to stop learning.  When you work these brain functions together, different networks in the brain fire together. Over time, this changes the speed and efficiency of the brain’s communication pathways.
+                            </p>
+                        </section>
+                        <footer class="modal-card-foot has-background-primary">
+                            <button class="button is-white-ter is-active">Download</button>
+                            <button class="button is-white-ter is-active">Watch</button>
+                        
+
+                        </footer>
+
+                    </div>
+                    <button class="modal-close is-large" aria-label="close"></button>
+                  </div>
+
+                  <div class="modal 3  ">
+                    <div class="modal-background"></div>
+                    <div class="modal-card">
+                        <div class="modal-card-head has-background-primary">
+                            <h1 class="modal-card-title">Special programs.</h1>
+                        </div>
+                        <section class="modal-card-body">
+                            <h1 class="title"> Our elderly and their loved</h1>
+                            <p>NeuroSynch Health is a therapy center that guides and supports our elderly and their loved ones through the difficulties of neurodegenerative diseases such as Alzheimer’s, Dementia, and Parkinson’s. If these diseases are left unattended, they can destroy an individual’s mental state so quickly that time plays a critical function in our current understanding of this debilitative disease.  Currently, there are no medications that stop the degeneration of the brain.  Therefore, it is crucial to use alternative methods that have been proven to slow degeneration to maintain memory and motor functions. 
+                                NeuroSynch Health provides guidance and an integrative solution with multiple proven methods to slow degeneration; resulting in a major increase in mental and physical function. This helps our clients and families develop coping mechanisms to improve more than just the lives of our loved ones. Our team of professionals will then develop a personalized treatment plan for each person.  This new and unique approach focuses on our clients’ objectives and personal interests in a manner utterly impossible to find in the current market. 
+                               </p>
+
+                               <ul class="steps is-small">
+                                <li class="step-item is-completed">
+                                  <div class="step-marker">
+                                    
+                                  </div>
+                                  <div class="step-details is-primary is-completed">
+                                    <p class="step-title">Early</p>
+                                    <p>Change Brain</p>
+                                  </div>
+                                </li>
+                                <li class="step-item is-info is-completed">
+                                  <div class="step-marker"></div>
+                                  <div class="step-details">
+                                    <p class="step-title">Subtle</p>
+                                    <p>Decline Thinking</p>
+                                  </div>
+                                </li>
+                                <li class="step-item is-warning is-completed">
+                                  <div class="step-marker"></div>
+                                  <div class="step-details">
+                                    <p class="step-title">Confusion</p>
+                                    <p>Memory changes.</p>
+                                  </div>
+                                </li>
+                                <li class="step-item is-danger is-completed">
+                                  <div class="step-marker">
+                                    
+                                  </div>
+                                  <div class="step-details">
+                                    <p class="step-title">Inability</p>
+                                    <p>To bathe, dress, or eat without help</p>
+                                  </div>
+                                </li>
+                                <li class="step-item is-danger is-active">
+                                    <div class="step-marker">
+                                      
+                                    </div>
+                                    <div class="step-details">
+                                      <p class="step-title">Loss </p>
+                                      <p>Ability to communicate and recognize loved ones.</p>
+                                    </div>
+                                  </li>
+                              </ul>
+
+                              <p>A major key to our program is the use of innovative technologies such as: VR, wearables, and mobile applications (that allow training and repetition from the comfort of your home). Unlike any short-term solutions or quick fix, we require the work and time to hold true long- term results.
+                                This will make NeuroSynch Health the only resource you will need for the well-being of your loved ones. </p>
+
+                        </section>
+                        <footer class="modal-card-foot has-background-primary">
+                                <button class="button is-white-ter">Download</button>
+                                <button class="button is-white-ter">Watch</button>
+                        </footer>
+
+                    </div>
+                    <button class="modal-close is-large" aria-label="close"></button>
+                  </div>
+
+                  <div class="modal 4">
+                    <div class="modal-background"></div>
+                    <div class="modal-card">
+                        <div class="modal-card-head has-background-primary">
+                            <h1 class="modal-card-title">Media Lab</h1>
+                        </div>
+                        <section class="modal-card-body">
+                            <h1 class="title">Research + creativity</h1>
+                            <p>In our lab, we will constantly research and create new approaches to increase our patients’ engagement and experience fun, real, and approachable goals without the consequence of multiple side-effects.  We will create a bond with our patients and continually assess to measure any improvement and have the ability to adjust when required.   </p>
+                        </section>
+                        <footer class="modal-card-foot has-background-primary">
+                            <button class="button is-white-ter">Download</button>
+                            <button class="button is-white-ter">Watch</button>
+                        </footer>
+
+                    </div>
+                    <button class="modal-close is-large" aria-label="close"></button>
+                  </div>
+                   </div>
+ 
+                </section>
+            
+
+                <section class="foo">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="content">
+                                <h1 class="title">Milly Reyes</h1>
+                                <h1 class="subtitle">Founder and CEO</h1>
+                                <h2><i class="fas fa-globe"></i> www.neurosynchhealthcenter.com </h1>
+                                <h2><i class="far fa-envelope"></i> milly@neurosynchhealthcenter.com </h1>
+                                <h2><i class="fas fa-phone-alt"></i> (240) 578-0193</h1>
+                            </div>
+                        </div>
+                        <div class="column"></div>
+                    </div>
+                </section>
+            </div>
+
+
+           
+
+
+
+<!-- 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥 -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBf3YfzJr4p3G7L03hOSpB50LXBnpcl3rk",
+    authDomain: "neurosych.firebaseapp.com",
+    databaseURL: "https://neurosych.firebaseio.com",
+    projectId: "neurosych",
+    storageBucket: "neurosych.appspot.com",
+    messagingSenderId: "673216706086",
+    appId: "1:673216706086:web:fad819130372a0ce5e58e7",
+    measurementId: "G-4J79RV4HXH"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+</script>
+
+<!-- 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥 -->
+
+    <!-- DOCS -->
+    <!-- P5.JS -->
+    
+	<script src="libraries/p5.min.js"></script>
+	<script src="libraries/p5.dom.js"></script>
+	<script src="libraries/p5.sound.js"></script>
+	<script src="libraries/p5.collide2d.min.js" ></script>
+    <script src="js/sketch3.js"></script>
+    <!-- JQUERY GSAP BULMA SCROLLMAGIC-->
+    <script src="node_modules/bulma-steps/dist/js/bulma-steps.min.js" ></script>
+    <script src="https://kit.fontawesome.com/d6cd842b44.js" crossorigin="anonymous"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js" ></script>
+    <script src="node_modules/gsap/dist/gsap.min.js" ></script>
+    <script src="node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js" ></script>
+    <script src="node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js" ></script>
+    <script src="node_modules/scrollmagic/scrollmagic/minified/plugins/jquery.ScrollMagic.min.js" ></script>
+    <script src="node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js" ></script>
+    <script src="js/main.js" ></script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "neurosynch_maquetado",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "animate.css": "^4.1.0",
+    "bulma": "^0.8.2",
+    "bulma-steps": "^2.2.1",
+    "bulma-steps-component": "^0.5.3",
+    "gsap": "^3.2.6",
+    "jquery": "^3.5.1",
+    "nodemon": "^2.0.4",
+    "scrollmagic": "^2.0.7"
+  }
+}
