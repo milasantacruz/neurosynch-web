@@ -13,9 +13,9 @@
     "bulma": "^0.8.2",
     "bulma-steps": "^2.2.1",
     "bulma-steps-component": "^0.5.3",
-    "gsap": "^3.2.6",
+    "gsap": "^3.11.0",
     "jquery": "^3.5.1",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.19",
     "scrollmagic": "^2.0.7"
   }
 }
